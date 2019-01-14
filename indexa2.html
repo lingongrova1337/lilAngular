@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html ng-app="mainIndexA">
+  <head>
+    <script src="app\lib\angular.min.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="indexoScripts.js"></script>
+    <link href="indexStyle.css" rel="stylesheet" type="text/css" />
+
+    <title>Kalle</title>
+  </head>
+  <body ng-controller="MyBodyController">
+    <h1>Aloha</h1>
+
+    <div id="meny">
+      <ul>
+        <li><a href="indexA.html">index-1</a></li>
+        <li><a href="indexa2.html">index-2</a></li>
+        <li><a href="indexa3.html">index-3</a></li>
+        <li><a href="indexa4.html">index-4</a></li>
+      </ul>
+      </div>
+      <div ng-view></div>
+
+        <h3 id="box">Box</h3>
+        <textarea name="description" rows="2" cols="50" ></textarea>
+
+        <h3 id="valj">Välj något</h3>
+        <!-- this renders as a drop down lst -->
+        <select name="favorite-food" id="favorite-food">
+             <option>Tuborg Grön</option>
+             <option>Spendrups</option>
+             <option>Guiness</option>
+        </select>
+
+        <h3 id="dl">Dee Lite</h3>
+
+        <div ng-app="mainIndexA" ng-controller="MyBodyController">
+          <form name="theForm">
+            <div>
+              <input type="text" name="firsasdtName" ng-model="firstName"> <br/>
+              <input type="button" value="Show first name" ng-click="showFirstName()"/>
+            </div>
+          </form>
+        </div>
+    <div id="bog">
+        <h3 id="vend">Vendetta</h3>
+        <form name="registrationForm" ng-submit="person.register()" novalidate>
+            <input type="text" placeholder="First Name" name="firsddstName" ng-model="person.firstName" required>
+            <span ng-show="firstNameInvalid">Please enter a value for First name</span>
+            <br/>
+            <input type="text" placeholder="Last Name" name="lastNasdsdme" ng-model="person.lastName" required>
+            <span ng-show="lastNameInvalid">Please enter a value for Last name</span>
+        </form>
+    </div> <!--end bog-->
+    <hr/>
+        <h3>Prisz</h3>
+        <div ng-app="mainIndexA" ng-controller="MyBodyController">
+           <div ng-show="registrationForm.$pristine">Form input has not yet started</div>
+           <div ng-show="registrationForm.$dirty">Form input has started</div>
+             <form name="registrationForm" ng-submit="register()" novalidate>
+               <input type="text" placeholder="First Name" name="firstName" ng-model="person.firstName" required="" class="ng-dirty ng-invalid ng-invalid-required ng-valid-email">
+               <span ng-show="firstNameInvalid"><br/>Please enter a value for First name</span>
+               <br/>
+
+               <input type="text" placeholder="Last Name" name="lastName" ng-model="person.lastName" required="" class="ng-dirty ng-invalid ng-invalid-required ng-valid-email">
+               <span ng-show="lastNameInvalid"><br/>Please enter a value for Last name</span>
+               <br/>
+
+               <input type="email" placeholder="Email" name="email" ng-model="person.email" required="" class="ng-dirty ng-invalid ng-invalid-required ng-valid-email">
+               <span ng-show="emailInvalid"><br/>A valid email address is required</span>
+               <br/>
+
+               <select name="research" ng-model="person.levels" ng-options="obj.label as obj.value for obj in person.channels" required>
+               <option value="">Where did you hear about us?</option>
+               </select>
+               <span ng-show="researchInvalid"><br/>Please tell us where you heard about us</span>
+               <br/>
+
+               <input ng-model="person.newsletterOptIn" type="checkbox" name="newsletterOptIn" id="newsletterOptIn" value="newsletterOptIn"/>
+               <label for="newsletterOptIn">Recieve monthly newsletter</label>
+               <br/>
+
+               <input type="submit" value="Register"/>
+             </form>
+           <div ng-show="doShow">
+              Thank you for taking the time to register!
+           </div>
+        </div>
+
+        <div id="footer">
+        </div>
+  </body>
+</html>

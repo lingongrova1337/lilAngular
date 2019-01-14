@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>Kurwa</title>
+    <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="app\lib\angular.min.js"></script>
+    <script>
+    var myApp = angular.module('myApp', []);
+    myApp.controller('MyController', ['$scope',
+          function ($scope) {
+          var employees = ['Catherine Grant', 'Monica Grant',
+        'Christopher Grant', 'Jennifer Grant'];
+
+        var someData = {
+          firstName: 'Jenna',
+          surname: 'Grant',
+          dateJoined: new Date(2010,2,23),
+          consumption: 123.659855,
+          plan:'super-basic-plan',
+
+          //Last 12 nobths of data usage
+          monthlyUsageHistory:
+          [123.659855,
+                 89.645222,
+                 97.235644,
+                 129.555555,
+                 188.699855,
+                 65.652545,
+                 123.659855,
+                 89.645222,
+                 97.235644,
+                 129.555555,
+                 188.699855,
+                 65.652545]
+        };
+        $scope.data = someData;
+        //$scope.ourEmployees = employees;
+        }
+      ]);
+   </script>
+
+
+  </head>
+    <body ng-controller="MyController">
+         <!--<h2>Number of Employees: {{ ourEmployees.length}}</h2>
+         <p ng-repeat="employee in ourEmployees">{{employee}}</p>
+       -->
+       <p>
+         <strong>First Name</strong>:{{data.firstName}}<br/>
+         <strong>Surname:</strong>{{data.surname}}<br/>
+         <strong>Date:</strong>{{data.dateJoined}}<br/>
+         <strong>Data Cons:</strong>{{data.consumption|number}}
+      </p>
+
+      <p>
+        <strong>First Name</strong>: {{data.firstName|lowercase}}<br/>
+        <strong>Surname:</strong>: {{data.surname|uppercase}}<br/>
+        <strong>Date:</strong>{{data.dateJoined|date:'medium'}}<br/>
+        <strong>Date:</strong>{{data.dateJoined|date:'mediumDate'}}<br/><hr/>
+        <strong>Date:</strong>{{data.dateJoined|date:'MMMM'}}
+        {{data.dateJoined|date:'EEEE'}}
+        {{data.dateJoined|date:'y'}}
+        {{data.dateJoined|date:'HH'}}:{{data.dateJoined|date:'mm'}}:{{data.dateJoined|date:'ss'}}
+
+      </p>
+
+      <h2>Gigabytes used over the last 3 months</h2>
+      <ul>
+        <li ng-repeat="gigabytes in data.monthlyUsageHistory | limitTo:5">
+          {{gigabytes|number:2}}
+        </li>
+      </ul>
+
+
+
+
+  </body>
+</html>

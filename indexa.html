@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html ng-app="mainIndexA">
+  <head>
+    <script src="app\lib\angular.min.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="indexoScripts.js"></script>
+    <link href="indexStyle.css" rel="stylesheet" type="text/css" />
+
+
+    <title>Kalle</title>
+  </head>
+  <body ng-controller="MyBodyController">
+    <h1>Aloha</h1>
+
+    <div id="meny">
+        <ul>
+            <li><a href="indexA.html">index-1</a></li>
+            <li><a href="indexa2.html">index-2</a></li>
+            <li><a href="indexa3.html">index-3</a></li>
+            <li><a href="indexa4.html">index-4</a></li>
+        </ul>
+    </div>
+
+      <p>Namn:  {{dat.name}}</p>
+      <p>Enamn: {{dat.enamn}}</p>
+      <hr/>
+      <div one-Directive></div>
+
+      <div id="arr">
+              <h2>Arrays<h2>
+              <p>{{dat2.arr1[1]}}</p>
+      </div>
+
+
+      <h2>Repeat</h2>
+      <div id="repeata" ng-repeat="x in dat2.arr2|limitTo:5">
+        {{x}}
+      </div>
+
+      <div id="inc2" ng-include="'ng-inc.html'"></div>
+
+      <div id="yo">
+        <p>Aftermath</p>
+      </div>
+
+  </body>
+</html>

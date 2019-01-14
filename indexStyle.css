@@ -1,0 +1,103 @@
+body{
+  background-color: white;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li{
+  float:left;
+}
+
+#arr{
+  font-size: 18px;
+  background-color: orange;
+}
+#yo{
+  background-color: blue;
+}
+
+#inc2{
+  background-color: green;
+  font-size: 16px;
+}
+
+#repeata{
+  background-color:red;
+}
+
+#box{
+  background-color: green;
+}
+
+#valj{
+  background-color: blue;
+}
+
+#dl{
+  background-color: yellow;
+}
+
+#vend{
+  background-color:pink;
+}
+
+#bog{
+  background-color: purple;
+}
+
+#footer{
+  background-color: orange;
+  padding-top:10px;
+  padding-bottom:20px;
+}
+
+input[name='firstName'].ng-dirty.ng-pristine{
+  color:green;
+  background-color: green;
+}
+
+input[name='email'].ng-dirty.ng-invalid {
+ color: white;
+ background-color: red;
+}
+
+input[name='email'].ng-dirty.ng-valid {
+ color: green;
+ background-color: white;
+}
+
+
+#square {
+ width: 150px;
+ height: 150px;
+ margin:4em;
+ border: solid 10px green;
+ background-color: black;
+ }
+ #square:hover {
+ transform: scale(2.3) rotate(45deg);
+ background-color:orange;
+ }
+
+
+
+
+
+
+
+
+/**/
